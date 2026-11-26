@@ -1,19 +1,20 @@
 # Jam Looper
 
-A multitrack loop station that runs in your browser. Record from your mic, overdub, mute and solo tracks, switch between scenes, and export the mix as a WAV. It's one HTML file with no build step and no dependencies.
+A multitrack loop station that runs in your browser. Record from your mic, arrange and loop clips, mute and solo tracks, switch between scenes, and export the mix as a WAV. It's one HTML file with no build step and no dependencies.
 
 **[▶ Try it live](https://trymoto.github.io/jam-looper/)**
 
-![Jam Looper screenshot](docs/screenshot.png)
+![Jam Looper screenshot](docs/screenshot.jpg)
 
 ## Features
 
-- **Multitrack recording and overdubbing** from any audio input, with per-track volume, pan, mute and solo
+- **Multitrack recording** from any audio input, with per-track volume, pan, mute and solo. Takes are as long as you play, rounded up to whole bars
+- **Clips**: several per track. Move and crop them, or turn on looping and pick which part repeats (Ableton-style loop brace). Select a clip to drag fade-in / fade-out handles. Newer clips trim whatever they overlap
 - **Loop sections**: drag on the timeline to loop and record into just a few bars
-- **Scenes**: save different clip arrangements and queue the switch to land on the next loop
-- **Chords & form**: lay out a chord chart over the bars, with a key picker and preset forms
+- **Scenes**: each has its own length, chords and loop section. Queue a switch to land at the end of the loop. Drag scenes to reorder them
+- **Chords**: type a chord chart over each scene's bars
 - **Metronome, count-in and tap tempo**
-- **Latency calibration** so overdubs line up
+- **Latency calibration** so recordings line up
 - **Undo / redo**
 - **Export the mix** as a stereo `.wav`
 - **Projects** saved in your browser (IndexedDB). Nothing gets uploaded anywhere.
@@ -24,7 +25,7 @@ A multitrack loop station that runs in your browser. Record from your mic, overd
 | Key | Action |
 | --- | --- |
 | `Space` | Play / stop |
-| `1`–`9`, `0` | Record on track 1–10 |
+| `1`–`9`, `0` | Record on track 1–10 (again to stop) |
 | `Shift` + number | Mute track |
 | `Alt` + number | Solo track |
 | `←` / `→` | Previous / next bar (`Shift`: by beat) |
@@ -43,7 +44,10 @@ A multitrack loop station that runs in your browser. Record from your mic, overd
 | `K` | Show / hide chords |
 | `E` | Export mix |
 | `Ctrl/⌘+Z`, `Ctrl/⌘+Shift+Z` or `Ctrl/⌘+Y` | Undo / redo |
-| `Esc` | Cancel a pending recording |
+| `Delete` | Delete the selected clip |
+| `Ctrl/⌘+C` / `Ctrl/⌘+V` | Copy the selected clip / paste it at the current bar |
+| `Ctrl/⌘+D` | Duplicate the selected clip |
+| `Esc` | Deselect, cancel a pending recording |
 
 ## Running locally
 
@@ -57,7 +61,7 @@ python -m http.server
 
 Then open http://localhost:3000 (or :8000).
 
-Use headphones while overdubbing so the speakers don't bleed into the mic.
+Use headphones while recording so the speakers don't bleed into the mic.
 
 ## Browser support
 
