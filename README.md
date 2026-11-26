@@ -18,6 +18,7 @@ A multitrack loop station that runs in your browser. Record from your mic, arran
 - **Undo / redo**
 - **Export the mix** as a stereo `.wav`
 - **Projects** saved in your browser (IndexedDB). Nothing gets uploaded anywhere.
+- **Project files**: export a project as a `.zip` (`project.json` plus every take as a 32-bit float WAV) and import it on another machine or site. Drop the zip onto the page or use Projects → Import
 - Light and dark Gruvbox themes. Works on phones and can be added to your home screen.
 
 ## Keyboard shortcuts
